@@ -1,10 +1,25 @@
 # MARCC
 
-When you [request an account](https://www.marcc.jhu.edu/request-access/request-an-account/) on MARCC, please note that Mick's JHED is mbonner5
+- When you [request an account](https://www.marcc.jhu.edu/request-access/request-an-account/) on MARCC, please note that Mick's JHED is `mbonner5`.
+- Follow [this link](https://www.evernote.com/shard/s573/sh/117a7ca1-4af1-e68a-026f-b6512cafee55/7949a4dcde4d0a1318b914460c8e575a) to access our guide to getting started with MARCC
 
-Follow [this link](https://www.evernote.com/shard/s573/sh/117a7ca1-4af1-e68a-026f-b6512cafee55/7949a4dcde4d0a1318b914460c8e575a) to access our guide to getting started with MARCC
+## Partitions
 
-## Sample SLURM template
+## Storage
+
+Lustre filesystems
+
+- `work`
+- `scratch`
+
+ZFS filesystems
+
+- `data`
+- `code`
+
+## Scheduling via SLURM
+
+### Sample SLURM template
 
 ```bash
 #!/bin/bash
@@ -20,8 +35,6 @@ Follow [this link](https://www.evernote.com/shard/s573/sh/117a7ca1-4af1-e68a-026
 #SBATCH --workdir=/home-net/home-4/foo@jhu.edu/scratch/
 
 ml anaconda  # loads the anaconda module
-conda activate foo
+conda activate <path_to_env>
 python bar.py
 ```
-
-Please contribute if you have additional information!
