@@ -9,7 +9,7 @@ This repository contains utilites and instructions for creating reproducible env
 
 ## Template `bonner-lab` environment
 
-The `bonner-lab` environment is a minimal base environment; please avoid installing other packages here. The following packages are installed by default:
+The `bonner-lab` environment is a minimal base environment; please avoid installing other packages here. The following packages are installed:
 
 - [`bonner-lab`](https://github.com/BonnerLab/bonner-lab)
 - [`model-tools`](https://github.com/BonnerLab/model-tools)
@@ -17,7 +17,7 @@ The `bonner-lab` environment is a minimal base environment; please avoid install
 - [`brainio`](https://github.com/BonnerLab/brainio)
 - [`result-caching`](https://github.com/BonnerLab/result-caching)
 
-Additionally, the following environment variables are set by default:
+Additionally, the following environment variables are set:
 
 | Environment variable     | Lab server                                                     | MARCC                                                          |
 | ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------- |
