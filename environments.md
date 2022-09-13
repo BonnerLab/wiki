@@ -7,45 +7,19 @@ This repository contains utilites and instructions for creating reproducible env
 - If you are on the lab server (`cogsci-mb-lab3.win.ad.jhu.edu` at IP 10.160.192.70), ensure that your `conda` is initialized by running `/home/shared/miniconda3/bin/conda init` and restarting your shell
 - If you are on MARCC, load the `anaconda` module using `ml anaconda`
 
-## Template `bonner-lab` environment
-
-The `bonner-lab` environment is a minimal base environment; please avoid installing other packages here. The following packages are installed:
-
-- [`bonner-lab`](https://github.com/BonnerLab/bonner-lab)
-- [`model-tools`](https://github.com/BonnerLab/model-tools)
-- [`brain-score`](https://github.com/BonnerLab/brain-score)
-- [`brainio`](https://github.com/BonnerLab/brainio)
-- [`result-caching`](https://github.com/BonnerLab/result-caching)
-
-Additionally, the following environment variables are set:
-
-| Environment variable     | Lab server                                                     | MARCC                                                          |
-| ------------------------ | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `RESULTCACHING_HOME`     | `/data/shared/.cache/brainscore/result-caching`                | `$HOME/work/shared/.cache/brainscore/result-caching`           |
-| `MT_HOME`                | `/data/shared/.cache/brainscore/model-tools`                   | `$HOME/work/shared/.cache/brainscore/model-tools`              |
-| `CM_HOME`                | `/data/shared/.cache/brainscore/candidate-models`              | `$HOME/work/shared/.cache/brainscore/candidate-models`         |
-| `BRAINIO_HOME`           | `/data/shared/.cache/brainscore/brainio`                       | `$HOME/work/shared/.cache/brainscore/brainio`                  |
-| `TORCH_HOME`             | `/data/shared/.cache/torch`                                    | `$HOME/work/shared/.cache/torch`                               |
-
-The following `environment.yml` file can be used to create the `bonner-lab` environment using `conda env create -f environment.yml`
+Here's a sample `environment.yml` file that can be used to create environments using `conda env create -f environment.yml`:
 
 ```YAML
-name: bonner-lab
+name: <your-environment-name>
 dependencies:
-  - python=3.7  # required for the current Brain-Score packages
+  - python=3.9  # change your Python version here
   - pip
-  - pip:
-    - git+https://github.com/BonnerLab/bonner-lab
-    - git+https://github.com/BonnerLab/brain-score
-    - git+https://github.com/BonnerLab/brainio
-    - git+https://github.com/BonnerLab/result-caching
-    - git+https://github.com/BonnerLab/model-tools
-variables:
-  RESULTCACHING_HOME: "/data/shared/.cache/brainscore/result-caching"
-  MT_HOME: "/data/shared/.cache/brainscore/model-tools"
-  CM_HOME: "/data/shared/.cache/brainscore/candidate-models"
-  BRAINIO_HOME: "/data/shared/.cache/brainscore/brainio"
-  TORCH_HOME: "/data/shared/.cache/torch"
+  - pip:  # preferably, use `pip` to install packages
+    - numpy
+variables:  # please use these environment variables so we can have a shared torch and dataset cache
+  TORCH_HOME: "/data/shared/torch"
+  BONNER_BRAINIO_CACHE: "/data/shared/brainio"
+  BONNER_DATASETS_CACHE: "/data/shared/datasets"
 ```
 
 ### Tips
@@ -75,7 +49,7 @@ variables:
 
 ## SSH public key authentication to the storage server
 
-- Our shared datasets are stored in [BrainIO format](https://github.com/BonnerLab/brainio) on the lab storage server (`cogsci-ml.win.ad.jhu.edu:/export/data2/shared/brainio_bonner` at IP 10.99.95.227)
+- Our shared datasets are stored in [BrainIO format](https://github.com/BonnerLab/brainio) on the lab storage server (`cogsci-ml.win.ad.jhu.edu:/export/data2/shared/brainio/bonner-datasets` at IP 10.99.95.227)
 - When using the BrainScore libraries, the datasets are downloaded to your local cache from the storage server using [`rsync`](https://download.samba.org/pub/rsync/rsync.1)
 - This dataset-fetching backend assumes your local machine running the code has SSH access to the storage server using public key authentication
 - Generate an SSH key pair on your local machine using `ssh-keygen -t ed25519`
