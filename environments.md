@@ -4,7 +4,7 @@ This document contains instructions for creating reproducible environments.
 
 ## Conda
 
-- If you are on the lab server (`cogsci-mb-lab3.win.ad.jhu.edu` at IP 10.160.192.70), ensure that your `conda` is initialized by running `/home/shared/miniconda3/bin/conda init` and restarting your shell
+- If you are on the lab workstation (`cogsci-mb-lab3.win.ad.jhu.edu` at IP 10.160.192.70), ensure that your `conda` is initialized by running `/home/shared/miniconda3/bin/conda init` and restarting your shell
 - If you are on MARCC, load the `anaconda` module using `ml anaconda`
 
 Here's a sample `environment.yml` file that can be used to create environments using `conda env create -f environment.yml`:
@@ -36,7 +36,7 @@ variables:  # please use these environment variables so we can have a shared tor
   - `<source_dir>` is the location of the source code you are working on
 - Faster installation of `conda` packages
   - [`mamba`](https://github.com/mamba-org/mamba) is a drop-in replacement for the `conda` package manager that has much faster dependency resolution
-  - `mamba` has been installed in both `base` `conda` environments on the lab server (`conda install mamba -n base -c conda-forge`)
+  - `mamba` has been installed in both `base` `conda` environments on the lab workstation (`conda install mamba -n base -c conda-forge`)
   - To use it, run `mamba init` and replace `conda` with `mamba` in (pretty much) all commands
   - Prefer [`pip`](https://pip.pypa.io/en/stable/) over [`conda`](https://docs.conda.io/projects/conda/en/latest/index.html) though the `conda` documentation [recommends the converse](https://www.anaconda.com/blog/understanding-conda-and-pip)
 
