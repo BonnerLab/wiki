@@ -1,6 +1,6 @@
 # Environments
 
-This repository contains utilites and instructions for creating reproducible environments.
+This document contains instructions for creating reproducible environments.
 
 ## Conda
 
