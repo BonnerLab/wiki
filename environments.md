@@ -22,6 +22,16 @@ variables:  # please use these environment variables so we can have a shared tor
   BONNER_DATASETS_CACHE: "/data/shared/datasets"
 ```
 
+If you are on MARCC, some shared enviorment variables (for the older repos without "bonner-" prefix) are:
+```YAML
+variables:
+  MT_HOME: "/data/mbonner5/shared/brainscore/model-tools"
+  CM_HOME: "/data/mbonner5/shared/brainscore/candidate-models"
+  TORCH_HOME: "/data/mbonner5/shared/torch"
+  BRAINIO_HOME: "/data/mbonner5/shared/brainio/for_old_lib" 
+  BRAINIO_DOWNLOAD_CACHE: "/data/mbonner5/shared/brainio/for_old_lib/datasets"
+```
+
 ### Tips
 
 - Avoid installing any packages in the `base` environment
