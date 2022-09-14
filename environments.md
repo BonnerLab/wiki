@@ -27,7 +27,6 @@ If you are on MARCC, envioronment variables cannot be set in the `yml` file due 
 - Create `etc/conda/`, in which create `activate.d` and  `deactivate.d`.
 - In `activate.d`, create `activate.sh` to set all the enviornment variables needed (examples are some shared enviorment variables for the older repos without "bonner-" prefix):
 ```YAML
-export RESULTCACHING_HOME="/data/mbonner5/zchen160/result-caching"
 export MT_HOME="/data/mbonner5/shared/brainscore/model-tools"
 export CM_HOME="/data/mbonner5/shared/brainscore/candidate-models"
 export BRAINIO_HOME="/data/mbonner5/shared/brainio/for_old_lib"
