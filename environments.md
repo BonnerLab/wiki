@@ -22,15 +22,20 @@ variables:  # please use these environment variables so we can have a shared tor
   BONNER_DATASETS_CACHE: "/data/shared/datasets"
 ```
 
-If you are on MARCC, some shared enviorment variables (for the older repos without "bonner-" prefix) are:
+If you are on MARCC, enviorenment variables cannot be set in the `yml` file due to lower conda version. To set the envioronment variables:
+- Go to the directory of your conda envioronment. (You may check the directory with `conda env list`)
+- Create `etc/conda/`, in which create `activate.d` and  `deactivate.d`.
+- In `activate.d`, create `activate.sh` to set all the enviornment variables needed (examples are some shared enviorment variables for the older repos without "bonner-" prefix):
 ```YAML
-variables:
-  MT_HOME: "/data/mbonner5/shared/brainscore/model-tools"
-  CM_HOME: "/data/mbonner5/shared/brainscore/candidate-models"
-  TORCH_HOME: "/data/mbonner5/shared/torch"
-  BRAINIO_HOME: "/data/mbonner5/shared/brainio/for_old_lib" 
-  BRAINIO_DOWNLOAD_CACHE: "/data/mbonner5/shared/brainio/for_old_lib/datasets"
+export RESULTCACHING_HOME="/data/mbonner5/zchen160/result-caching"
+export MT_HOME="/data/mbonner5/shared/brainscore/model-tools"
+export CM_HOME="/data/mbonner5/shared/brainscore/candidate-models"
+export BRAINIO_HOME="/data/mbonner5/shared/brainio/for_old_lib"
+export BRAINIO_DOWNLOAD_CACHE="/data/mbonner5/shared/brainio/for_old_lib/datasets"
+export TORCH_HOME="/data/mbonner5/shared/torch"
 ```
+- In `deactivate.d`, create `deactivate.sh`, in which write `unset <variable name>` for all envioronment variables set in `activate.sh`.
+
 
 ### Tips
 
