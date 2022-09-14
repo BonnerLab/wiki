@@ -47,7 +47,18 @@ Be sure to back up any important files to the Bonner Lab storage server!
 
 - Perform any large data transfer only using the data transfer node(s)
   - If your files are relatively small (a few GB), use scp/rsync
-  - If they're large, use Globus (instructions to follow)
+  - If they're large, use Globus:
+    - [Globus Connect Personal](https://www.globus.org/globus-connect-personal) is available on the lab workstation at `/home/shared/globus/globusconnectpersonal-3.2.0/`
+    - Set up your Globus Connect Personal account on the workstation by running `/home/shared/globus/globusconnectpersonal-3.2.0/globusconnectpersonal -setup`
+      - Open the generated link in a browser and follow the instructions. Recommendation: use the label `bonner-lab-workstation` for the workstation when prompted.
+      - Enter the generated authentication code at the terminal when prompted. You will need to re-enter the label you used in the previous step.
+      - Append any directories you want to allow MARCC to read/write to to the file `~/.globusonline/lta/config-paths` in the format `<path>,0,1`. The `0` is the share bit (no sharing allowed). The `1` is the read-write bit that allows MARCC to read/write to the directory.
+    - Run a Globus Connect Personal instance on the workstation by running `/home/shared/globus/globusconnectpersonal-3.2.0/globusconnectpersonal -start&`
+    - Log in to the [Globus web app](https://app.globus.org/) using your JHU credentials
+    - On the Globus File Manager, you can access MARCC's Data Transfer Node(s) by searching for entering the Collection name `Rockfish.dtn01.user.data`. You can find the workstation at the label you entered during setup (`bonner-lab-workstation`).
+    - You can now schedule transfers and other filesystem operations.
+    - WARNING: If you transfer large files, the workstation IO will become very slow for everyone using the system.
+    - WARNING: Only one instance of Globus Connect Personal can run on the workstation at a time. If anyone else is running a job, you might need to ask them to stop. Not sure about this. If anyone figures it out, please update this page!
 - If you have a few small files, you can scp/rsync via the login node
 
 ### Requesting an interactive shell
