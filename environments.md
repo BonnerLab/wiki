@@ -22,7 +22,7 @@ variables:  # please use these environment variables so we can have a shared tor
   BONNER_DATASETS_CACHE: "/data/shared/datasets"
 ```
 
-If you are on MARCC, enviorenment variables cannot be set in the `yml` file due to lower conda version. To set the envioronment variables:
+If you are on MARCC, envioronment variables cannot be set in the `yml` file due to lower conda version. To set the envioronment variables:
 - Go to the directory of your conda envioronment. (You may check the directory with `conda env list`)
 - Create `etc/conda/`, in which create `activate.d` and  `deactivate.d`.
 - In `activate.d`, create `activate.sh` to set all the enviornment variables needed (examples are some shared enviorment variables for the older repos without "bonner-" prefix):
