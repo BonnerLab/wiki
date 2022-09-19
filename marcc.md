@@ -71,20 +71,16 @@ TODO
 
 ### Sample SLURM template
 
-TODO
-
 ```bash
-#!/bin/bash
+#!/bin/bash -l
 #SBATCH --job-name=foo
-#SBATCH --partition=gpup100
-#SBATCH --time=12:0:0
+#SBATCH --time=1:0:0
+#SBATCH --partition=a100
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=24
-#SBATCH --gres=gpu:2
-#SBATCH --mail-type=end
-#SBATCH --mail-user=foo@jhu.edu
-#SBATCH --workdir=/home-net/home-4/foo@jhu.edu/scratch/
+#SBATCH --mem-per-cpu=4G
+#SBATCH --gres=gpu:1
+#SBATCH --account=mbonner5_gpu
 
 ml anaconda  # loads the anaconda module
 conda activate <path_to_env>
