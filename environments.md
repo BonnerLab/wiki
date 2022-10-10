@@ -29,8 +29,8 @@ If you are on MARCC, envioronment variables cannot be set in the `yml` file due 
 ```YAML
 export MT_HOME="/data/mbonner5/shared/brainscore/model-tools"
 export CM_HOME="/data/mbonner5/shared/brainscore/candidate-models"
-export BRAINIO_HOME="/data/mbonner5/shared/brainio/for_old_lib"
-export BRAINIO_DOWNLOAD_CACHE="/data/mbonner5/shared/brainio/for_old_lib/datasets"
+export BRAINIO_HOME="/data/mbonner5/shared/brainio"
+export BRAINIO_DOWNLOAD_CACHE="/data/mbonner5/shared/brainio/bonner-datasets"
 export TORCH_HOME="/data/mbonner5/shared/torch"
 ```
 - In `deactivate.d`, create `deactivate.sh`, in which write `unset <variable name>` for all envioronment variables set in `activate.sh`.
