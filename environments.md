@@ -18,8 +18,8 @@ dependencies:
     - numpy
 variables:  # please use these environment variables so we can have a shared torch and dataset cache
   TORCH_HOME: "/data/shared/torch"
-  BONNER_BRAINIO_CACHE: "/data/shared/brainio"
-  BONNER_DATASETS_CACHE: "/data/shared/datasets"
+  BONNER_BRAINIO_HOME: "/data/shared/brainio"
+  BONNER_DATASETS_HOME: "/data/shared/datasets"
 ```
 
 If you are on MARCC, envioronment variables cannot be set in the `yml` file due to lower conda version. To set the envioronment variables:
