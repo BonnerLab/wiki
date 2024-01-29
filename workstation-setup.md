@@ -12,12 +12,12 @@ This document describes how to set up and configure an account on either machine
 
 ```
 [global]
-cache-dir=/data/shared/pip_cache
+cache-dir=/data/shared/cache/pip
 ```
 
 3. Add the following line to `~/.bashrc`:
 
-`export TORCH_HOME=/data/shared/torch_cache`
+`export TORCH_HOME=/data/shared/cache/torch`
 
 4. Activate the Conda package manager by running `source /opt/anaconda3/bin/activate` followed by `conda init`. Restart your shell.
 5. Add the following lines to `~/.condarc`:
@@ -26,5 +26,5 @@ cache-dir=/data/shared/pip_cache
 pkgs_dirs:
     - /opt/anaconda3/pkgs
 envs_dirs:
-    - /data/shared/conda_environments
+    - /data/shared/environments/conda
 ```
