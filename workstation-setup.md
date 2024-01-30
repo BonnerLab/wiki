@@ -19,12 +19,12 @@ cache-dir=/data/shared/cache/pip
 
 `export TORCH_HOME=/data/shared/cache/torch`
 
-4. Activate the Conda package manager by running `source /opt/anaconda3/bin/activate` followed by `conda init`. Restart your shell.
-5. Add the following lines to `~/.condarc`:
+4. Activate the Conda package manager by running `source /data/shared/miniconda3/bin/activate` followed by `conda init`. Restart your shell.
+5. Add the following lines to `~/config/conda/.condarc`:
 
 ```
 pkgs_dirs:
-    - /opt/anaconda3/pkgs
+    - /data/shared/miniconda3/pkgs
 envs_dirs:
-    - /data/shared/environments/conda
+    - /data/shared/miniconda3/envs
 ```
