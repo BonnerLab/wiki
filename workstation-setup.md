@@ -27,7 +27,7 @@ cache-dir=/data/shared/cache/pip
 ## Set up Conda
 
 4. Activate the Conda package manager by running `source /data/shared/miniconda3/bin/activate` followed by `conda init`. Restart your shell.
-5. Add the following lines to `~/config/conda/.condarc`:
+5. Add the following lines to `~/config/conda/condarc`:
 
 ```
 pkgs_dirs:
