@@ -2,8 +2,8 @@
 
 We currently have two active workstations:
 
-- `lab-1` (IP address `10.160.191.207`, hostname `cogsci-mb-gpu1.acasmart.jh.edu`) -- a powerful machine with a 2 TB SSD, 128 GB RAM, and an RTX 4090 Ti (24 GB VRAM)
-- `lab-old` (IP address `10.160.192.70`, hostname `cogsci-mb-lab3`) -- a weaker computer with a 1 TB SSD, a 5 TB HDD, 128 GB RAM, and an RTX 2080 (8 GB VRAM)
+- `lab-1` (IP address `10.160.191.207`, hostname `cogsci-mb-gpu1.acasmart.jh.edu`) -- a powerful machine with a 2 TB SSD + 4 TB SSD, 128 GB RAM, and an RTX 4090 Ti (24 GB VRAM)
+- `lab-old` (IP address `10.160.192.70`, hostname `cogsci-mb-lab3`) -- a weaker computer with a 1 TB SSD + 5 TB HDD, 128 GB RAM, and an RTX 2080 (8 GB VRAM)
 
 This document describes how to set up and configure an account on either machine. You are strongly recommended to use the new machine `lab-1`.
 
@@ -37,7 +37,7 @@ envs_dirs:
 ```
 ## Your directories
 
-- You have a home directory at `/home/<user>` on the 1 TB SSD.
+- You have a home directory at `/home/<user>` on the 2 TB SSD.
 - The 4 TB SSD is mounted at `/data`.
 - You have access to the directories under `/data/shared`.
 - You may want to create directories under `/data` for your personal use (e.g. `/data/rgautha1`). Keep in mind that everyone can read/write files in `/data` by default, including any directories you create there. If this is a problem, let me know and I can try to adjust the permissions (though everything is working now and I'd rather not break anything!)
